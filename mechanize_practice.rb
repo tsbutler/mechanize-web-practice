@@ -25,15 +25,26 @@ mechanize = Mechanize.new
 # page. (The preceding was lifted from the website I found this tutorial 
 # http://readysteadycode.com/howto-scrape-websites-with-ruby-and-mechanize as # is most of this.)
 
-page = mechanize.get('http://en.wikipedia.org/wiki/Main_Page')
+# page = mechanize.get('http://en.wikipedia.org/wiki/Main_Page')
 
-link = page.link_with(text: 'Random article')
+# link = page.link_with(text: 'Random article')
 
-page = link.click
+# page = link.click
 
-puts page.uri
+# puts page.uri
 
 # The #link_with method is provided by mechanize, and makes it easy to pull out
 # the random article link. The #click method instructs mechanize to follow the # link, and the #uri method returns the address of the page. Notice that 
 # mechanize follows redirects automatically, so this example makes three HTTP # requests in total.
 
+page = mechanize.get('http://www.gov.uk')
+
+form = page.forms.first
+
+form['q'] = 'passport'
+
+page = form.submit
+
+page.search('#results h3').each do |h3|
+  puts h3.text.strip
+end
