@@ -51,3 +51,14 @@ end
 
 # Instead of searching by CSS selector we pick the first form on the page, and # set the value of the search field, just as if we had been using a web 
 # browser directly. Then we submit the form and list out the top results.
+
+
+
+# Here's a list of suggested exercises from the tutorial about how to 
+# proceed.  
+
+# Write a script to count the number of links in a web page
+# Write a script to calculate the most popular keywords on a web page
+# Write a script to simulate a user logging in to your local Rails app
+# Use the microformats2 gem to parse the microformats2 examples
+# Adapt the search form example to search Wikipedia or Amazon
