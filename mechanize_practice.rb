@@ -48,3 +48,6 @@ page = form.submit
 page.search('#results h3').each do |h3|
   puts h3.text.strip
 end
+
+# Instead of searching by CSS selector we pick the first form on the page, and # set the value of the search field, just as if we had been using a web 
+# browser directly. Then we submit the form and list out the top results.
